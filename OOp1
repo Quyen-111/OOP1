@@ -1,0 +1,44 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Item {
+    String name;
+    int weight;
+    Item (String name, int weight) {
+        this.name = name;
+        this.weight = weight;
+    }
+    Item (String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public int getWeight() {
+        return weight;
+    }
+}
+
+abstract class Box {
+    abstract void add (Item item);
+    abstract boolean isInBox (Item item);
+}
+class BoxWithMaxWeight extends Box {
+    ArrayList<String> items = new ArrayList<String>();
+    public void BoxWithMaxWeight(int maxWeight) {
+    }
+    public void add (Item item){
+    }
+    public boolean isInBox (Item item){
+        return true;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        BoxWithMaxWeight ten = new BoxWithMaxWeight();
+        ten.items.add("Saludo");
+        items.add("Pirkka");
+        items.add("Kopi Luwak");
+    }
+}
