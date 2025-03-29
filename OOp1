@@ -11,7 +11,6 @@ class Item {
     Item (String name) {
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
@@ -19,26 +18,35 @@ class Item {
         return weight;
     }
 }
-
 abstract class Box {
     abstract void add (Item item);
     abstract boolean isInBox (Item item);
 }
 class BoxWithMaxWeight extends Box {
-    ArrayList<String> items = new ArrayList<String>();
+    ArrayList<Item> items = new ArrayList<Item>();
+    int maxWeight;
     public void BoxWithMaxWeight(int maxWeight) {
+        this.maxWeight = maxWeight;
+        this.items = new ArrayList<>();
     }
-    public void add (Item item){
+    public void add (Item item) {
+        int totalWeight = 0;
+        for (Item i : items) {
+            totalWeight += item.getWeight();
+        }
+        if (totalWeight + item.getWeight() <= maxWeight) {
+            items.add(item);
+        } else {
+        }
+        public boolean isInBox (Item item){
+        }
+        class Main {
+            public static void main(String[] args) {
+                BoxWithMaxWeight box = new BoxWithMaxWeight();
+
+                Item saludo = new Item("Saludo", 5);
+
+                box.add(saludo);
+            }
+        }
     }
-    public boolean isInBox (Item item){
-        return true;
-    }
-}
-public class Main {
-    public static void main(String[] args) {
-        BoxWithMaxWeight ten = new BoxWithMaxWeight();
-        ten.items.add("Saludo");
-        items.add("Pirkka");
-        items.add("Kopi Luwak");
-    }
-}
